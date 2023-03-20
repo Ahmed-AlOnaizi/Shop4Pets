@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop4Pets</title>
+    <style>
+        #featured-animals {
+            margin: 20px 0;
+          }
+          #featured-animals h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          #featured-animals ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+          #featured-animals li {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+          }
+          #featured-animals li img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+          }
+          #featured-animals li h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 0 10px;
+          }
+          #featured-animals li p {
+            font-size: 16px;
+            margin: 0;
+          }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-search">
+        <a href="#"><img src="your-logo.png" alt="Shop4Pets logo"></a>
+        <form action="#" method="get">
+          <input type="text" placeholder="Search pets...">
+          <button type="submit">Search</button>
+        </form>
+        <div class="signin">
+          <a href="#">Create an account</a> / <a href="#">Login</a>
+        </div>
+      </div>
+      <h1>Welcome to Shop4Pets</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Dogs</a></li>
+          <li><a href="#">Cats</a></li>
+          <li><a href="#">Birds</a></li>
+          <li><a href="#">Fish</a></li>
+          <li><a href="#">Small pets</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="hero">
+        <div class="hero-text">
+          <h1>Find your perfect pet today!</h1>
+          <p>Welcome to Shop4Pets, your ultimate destination for all things pet-related! We understand the importance of having happy and healthy pets, and that's why we offer a wide selection of high-quality pet products at competitive prices. From food and toys to grooming and healthcare, we've got everything you need to keep your furry friends content and well-cared for. Our user-friendly website makes it easy to find what you're looking for, and our speedy delivery ensures that your pet won't have to wait long for their new goodies. Shop with us today and give your pet the love and attention they deserve!</p>
+        </div>
+      </section>
+      <section id="featured-animals">
+        <h2>Featured animals</h2>
+        <ul>
+          <li>
+            <h3>Five-month bunny looking to rehome!</h3>
+            <img src="/static/images/bunny.jpg" alt="Advert 1"/>
+            <p>This cute bunny is in need of a new home! He's very friendly and love to be held.</p>
+          </li>
+          <li>
+            <h3> 2 month old kitten ready to go home in two weeks. </h3>
+            <img src = "/static/images/milo.jpg" alt = "Advert 2"/>
+            <p>This adorable kitten is ready for adoption in just two weeks! He's playful and love cuddles.</p>
+        </li>
+        <li>
+            <h3> Two Six month old huskies looking to rehome! </h3>
+            <img src = "/static/images/puppies.jpg" alt = "Advert 3"/>
+            <p> These beautiful huskies are in need of a loving home! They're energetic and great with kids.</p>
+        </li>
+        <li>
+            <h3> Two year old maine-coon looking for a new home.</h3>
+            <img src = "/static/images/MainCoon.jpg" alt = "Advert 4"/>
+            <p> This gorgeous Maine Coon is seeking a new family! They're affectionate and love to play. </p>
+        </li>
+        <li>
+            <h3> Four month old turtle wanting to be rehomed </h3>
+            <img src = "/static/images/turtle.jpg" alt = "Advert 5"/>
+            <p>This beautiful turtle needs a new home! She's very smart and loves strawberries. </p>
+        </li>
+        <li>
+            <h3> Looking for someone to adopt my goldfish </h3>
+            <img src = "/static/images/fish.jpg" alt = "Advert 6"/>
+            <p>This friendly goldfish needs a new tank to call home! They're easy to care for. </p>
+        </li>
+        
+        
+<footer>
+  <p>&copy; 2023 Shop4Pets. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
+
