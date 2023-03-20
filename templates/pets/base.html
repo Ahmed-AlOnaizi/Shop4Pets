@@ -1,1 +1,40 @@
-<h3> STORE <h3>
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load pets_template_tags %}
+
+<html>
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>
+            Shop 4 Pets -
+            {% block title_block %}
+                Welcome to the Shop 4 Pets webpage!
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        <div>
+        {% block body_block %}
+        {% endblock %}
+        </div>
+        <div>
+             {% block sidebar_block %}
+                 {% get_category_list category %}
+             {% endblock %}
+        </div>
+        <hr />
+        <div>
+            <ul>
+                {% if user.is_seller %}
+                    <li><a href="{}">Add New Ad</a></li>
+                    <li><a href="{">Logout</a></li>
+                {% else %}
+                    <li><a href="{}">Sign Up</a></li>
+                    <li><a href="{}">Login</a></li>
+                {% endif %}
+                    <li><a href="{}">About</a></li>
+                    <li><a href="{}">Index</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
