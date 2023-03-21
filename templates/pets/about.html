@@ -1,0 +1,24 @@
+{% extends 'pets/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+     About Shop4Pets
+{% endblock %}
+
+{% block body_block %}
+     <h1>Welcome to our online pet store, Shop4Pets</h1>
+
+     <div>
+         where we are passionate about connecting pets with their forever homes.
+         Our mission is to provide a platform for responsible pet lovers to come together
+         and make a positive impact on the lives of animals. We offer a wide range of
+         lovingly raised and well-cared-for pets, including dogs, cats, birds, and small animals,
+         all of whom are ready to find their new families. Our team is dedicated to providing
+         a seamless and enjoyable experience for both our pets and our customers, ensuring that
+         each adoption is a happy and successful one. <br />
+         <strong>Thank you for choosing us as your go-to destination for all your pet-related needs.</strong><br />
+
+         <img src="{% static 'images/puppies.jpg' %}" alt="Picture of Shop4Pets" />
+         <img src="{{ MEDIA_URL}}MaineCoon.jpg" alt="Picture of MaineCoon" />
+     </div>
+{% endblock %}
