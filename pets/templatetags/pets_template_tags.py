@@ -1,5 +1,5 @@
 from django import template
-from pets.models import Category
+#from pets.models import Category
 
 register = template.Library()
 @register.inclusion_tag('pets/categories.html')
