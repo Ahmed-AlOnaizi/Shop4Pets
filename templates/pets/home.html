@@ -21,26 +21,29 @@
         <h1 id = "Title">Welcome to Shop4Pets </h1>
 
         <nav>
-            <ul>
+            <ul id = "CategoriesOfAnimals">
                 <h1> Categories of animals we offer! </h1>
-                <li><a href="#">Dogs</a>
-                    <img src="../../media/dogCategory.jpg" alt = "Category of dogs"/>
+
+
+                <li style = "grid-column: 1/span 1; grid-row: 1/span 1;"><a href="#">Dogs</a>
+                    <img src="{% static 'images/dogCategory.jpg' %}" alt = "Category of dogs"/>
+
                 </li>
-                <li>
+                <li style = "grid-column: 2/span 1; grid-row: 1/span 1";>
                     <a href="#">Cats</a>
-                    <img src ="../../media/miloCategory.jpg" alt = "Category of cats"/>
+                    <img src ="{%static 'images/miloCategory.jpg'  %}" alt = "Category of cats"/>
                 </li>
-                <li>
+                <li style = "grid-column: 3/span 1; grid-row: 1/span 1;">
                     <a href="#">Birds</a>
-                    <img src ="../../media/birdCategory.jpg" alt = "Category of birds"/>
+                    <img src ="{% static 'images/birdCategory.jpg' %}" alt = "Category of birds"/>
                 </li>
-                <li>
+                <li style = "grid-column: 1/span 1; grid-row: 2/span 1;">
                     <a href="#">Fish</a>
-                    <img src ="../../media/fishCategory.jpg" alt = "Category of fish"/>
+                    <img src ="{% static 'images/fishCategory.jpg' %}" alt = "Category of fish"/>
                 </li>
-                <li>
+                <li style = "grid-column: 2/span 1; grid-row: 2/span 1;">
                     <a href="#">Small pets</a>
-                    <img src = "../../media/hamsterCategory.jpg" alt = "Category of small pets"/>
+                    <img src = "{% static 'images/hamsterCategory.jpg' %}" alt = "Category of small pets"/>
                 </li>
             </ul>
         </nav>
