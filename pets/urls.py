@@ -22,6 +22,7 @@ urlpatterns = [
     path('ad/<int:ad_id>/', views.ad_detail, name='ad_detail'),
     path('restricted/', views.restricted, name='restricted'),
     path('logout/', views.user_logout, name='logout'),
+    path('register/', views.register, name='register'),
     
     
     

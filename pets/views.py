@@ -3,8 +3,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from pets.forms import CategoryForm
-from pets.forms import PageForm
+from pets.forms import PageForm, UserProfileForm, UserForm
 from pets.models import Category, Page, PetAd
+from django.contrib.auth.forms import UserCreationForm
+
 
 # Create your views here.
 
@@ -29,6 +31,26 @@ def cart(request):
 def checkout(request):
     context = {}
     return render(request, 'pets/checkout.html', context)
+
+def register(request):
+    registered = False
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+
+        if user_form.is_valid():
+            user = user_form.save()
+            user.set_password(user.password)
+            user.save()
+
+            registered = True
+        else:
+            print(user_form.errors)
+    else:
+        user_form = UserForm()
+
+    return render(request, 'pets/register.html',
+                  {'user_form': user_form, 'registered': registered})
+
 
 @login_required
 def user_logout(request):
