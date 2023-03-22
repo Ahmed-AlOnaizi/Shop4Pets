@@ -1,7 +1,11 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from pets.forms import CategoryForm
+from pets.forms import PageForm
+from pets.models import Category, Page, PetAd
+
 # Create your views here.
 
 def base(request):
@@ -9,8 +13,10 @@ def base(request):
     return render(request, 'pets/base.html', context)
 
 def home(request):
-    context = {}
+    ads = PetAd.objects.all()
+    context = {'ads': ads}
     return render(request, 'pets/home.html', context)
+
 
 def about(request):
     context = {}
@@ -24,10 +30,13 @@ def checkout(request):
     context = {}
     return render(request, 'pets/checkout.html', context)
 
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect(reverse('rango:index'))
 
-from pets.forms import CategoryForm
-from pets.forms import PageForm
-from pets.models import Category, Page
+
+
 
 def add_category(request):
     form = CategoryForm()
@@ -81,6 +90,11 @@ def add_page(request, category_name_slug):
     context = {'form': form, 'category': category}
     return render(request, 'pets/add_page.html', context)
 
+def ad_detail(request, ad_id):
+    ad = get_object_or_404(PetAd, id=ad_id)
+    context = {'ad': ad}
+    return render(request, 'pets/ad_detail.html', context)
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -99,4 +113,9 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied.")
     else:
         return render(request, 'pets/login.html', {})
+    
+@login_required
+def restricted(request):
+    return HttpResponse("Since you're logged in, you can see this text!")
+    return render(request, 'rango/restricted.html')
 

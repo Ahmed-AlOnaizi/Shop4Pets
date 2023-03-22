@@ -33,6 +33,17 @@ class Page(models.Model):
 
     def __str__(self):
         return self.title
+    
+    
+class PetAd(models.Model):
+    pet_name = models.CharField(max_length=200)
+    description = models.TextField()
+    image = models.ImageField(upload_to='pet_images/')
+    contact_info = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
