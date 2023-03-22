@@ -1,0 +1,5 @@
+{% for ad in ads %}
+    <div>
+        <h2><a href="{% url 'pets:ad_detail' ad.id %}">{{ ad.title }}</a></h2>
+    </div>
+{% endfor %}
