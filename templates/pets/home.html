@@ -6,8 +6,9 @@
 
 {% block body_block %}
     <header>
+    <link rel="stylesheet" href="../../static/css/base.css">
         <div class="logo-search">
-            <a href="#"><img src="{% static 'your-logo.png' %}" alt="Shop4Pets logo"></a>
+            <a href="#"><img src="{% static 'images/logo.jpg' %}" alt="Shop4Pets logo" id = "logo"> </a>
             <form action="#" method="get">
                 <input type="text" placeholder="Search pets...">
                 <button type="submit">Search</button>
@@ -16,29 +17,46 @@
                 <a href="#">Create an account</a> / <a href="#">Login</a>
             </div>
         </div>
-        <h1>Welcome to Shop4Pets</h1>
+
+        <h1 id = "Title">Welcome to Shop4Pets </h1>
+
         <nav>
             <ul>
                 <h1> Categories of animals we offer! </h1>
-                <li><a href="#">Dogs</a></li>
-                <li><a href="#">Cats</a></li>
-                <li><a href="#">Birds</a></li>
-                <li><a href="#">Fish</a></li>
-                <li><a href="#">Small pets</a></li>
+                <li><a href="#">Dogs</a>
+                    <img src="../../media/dogCategory.jpg" alt = "Category of dogs"/>
+                </li>
+                <li>
+                    <a href="#">Cats</a>
+                    <img src ="../../media/miloCategory.jpg" alt = "Category of cats"/>
+                </li>
+                <li>
+                    <a href="#">Birds</a>
+                    <img src ="../../media/birdCategory.jpg" alt = "Category of birds"/>
+                </li>
+                <li>
+                    <a href="#">Fish</a>
+                    <img src ="../../media/fishCategory.jpg" alt = "Category of fish"/>
+                </li>
+                <li>
+                    <a href="#">Small pets</a>
+                    <img src = "../../media/hamsterCategory.jpg" alt = "Category of small pets"/>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
         <section id="hero">
             <div class="hero-text">
-                <h1>Find your perfect pet today!</h1>
-                <p>Welcome to Shop4Pets! Our website is a one-stop-shop for those looking to buy or sell pets of all kinds.</p>
+                <h1>Find your perfect pet today! </h1>
+                <p>Welcome to Shop4Pets! Our website is a one-stop-shop for those looking to buy or sell pets of all kinds.
+                    Our website is designed to be user-friendly, with clear categories and filters to help you find the perfect pet for you. You can search by species, breed, age, gender, location, and other factors. Each pet listing includes a detailed description and photos, so you can get a good sense of their personality and appearance before making a decision.</p>
             </div>
         </section>
         <section id="featured-animals">
             <h2>Featured animals</h2>
             <ul>
-                <div style="width: 400px; float:left; margin:25px">
+                <div style="width: 30%; float:left; margin:25px">
                     <li>
                         <h3>Five-month bunny looking to rehome!</h3>
                         <a href="/pets/advert1/">Advert One</a><br />
@@ -48,11 +66,11 @@
                     <li>
                         <h3>2 month old kitten ready to go home in two weeks.</h3>
                         <a href="/pets/advert2/">Advert Two</a><br />
-                        <img src="{% static 'images/Milo.jpg' %}" alt="Advert 2" style="height: 200px" />
+                        <img src="{% static 'images/Milo.jpg' %}" alt="Advert 2"  />
                         <p>This adorable kitten is ready for adoption in just two weeks! He's playful and loves cuddles.</p>
                     </li>
                 </div>
-                <div style="width: 400px; float:left; margin:25px">
+                <div style="width: 30%; float:left; margin:25px">
                     <li>
                         <h3>Two Six month old huskies looking to rehome!</h3>
                         <a href="/pets/advert3/">Advert Three</a><br />
@@ -67,17 +85,17 @@
                     </li>
                 </div>
                                    
-                <div style = "width: 400px; float:right; margin:25px">
+                <div style = "width: 30%; float:right; margin:25px">
                     <li>
                         <h3> Four month old turtle wanting to be rehomed </h3>
                         <a href = "/pets/advert5/">Advert five</a><br />
-                        <img src = "/static/images/turtle.jpg" alt = "Advert 5" width="600" height="300"/>
+                        <img src = "/static/images/turtle.jpg" alt = "Advert 5" />
                         <p>This beautiful turtle needs a new home! She's very smart and loves strawberries. </p>
                     </li>
                     <li>
                         <h3> Looking for someone to adopt my goldfish </h3>
                         <a href = "/pets/advert6/">Advert Six</a><br />
-                        <img src = "/static/images/fish.jpg" alt = "Advert 6" width="600" height="300"/>
+                        <img src = "/static/images/fish.jpg" alt = "Advert 6" />
                         <p>This friendly goldfish needs a new tank to call home! They're easy to care for. </p>
                     </li>
                 </div>
@@ -87,7 +105,7 @@
                 <footer>
                     <div class="footer-content">
                         <div class="logo">
-                            <a href="#"><img src="{% static 'your-logo.png' %}" alt="Shop4Pets logo"></a>
+                            <a href="#"><img src="{% static 'images/logo.jpg' %}" alt="Shop4Pets logo" id= "logo"></a>
                         </div>
                         <div class="socials">
                             <a href="#"><i class="fa fa-facebook"></i></a>
