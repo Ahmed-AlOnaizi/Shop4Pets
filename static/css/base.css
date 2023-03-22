@@ -50,6 +50,22 @@
     background-color: var(--secondary-color);
   }
 
+  #CategoriesOfAnimals{
+    height: 600px;
+    display:grid;
+
+  }
+  #CategoriesOfAnimals img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  #CategoriesOfAnimals li {
+    max-width: 33%;
+    max-height: 50%;
+  }
+
+
 * {
      box-sizing: border-box !important;
      transition: ease all 0.5s;
@@ -58,6 +74,7 @@
 html {
      scroll-behavior: smooth;
 }
+
 
 
 body {
