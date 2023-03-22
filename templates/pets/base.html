@@ -26,11 +26,12 @@
         <div>
             <ul>
                 {% if user.is_authenticated %}
-                    <li><a href="{}">Add New Ad</a></li>
-                    <li><a href="{">Logout</a></li>
+                    <li><a href="{% url 'pets:add_advert' %}">Create a New Pet Advert</a></li>
+                    <li><a href="{% url 'pets:restricted' %}">Restricted Page</a></li>
+                    <li><a href="{% url 'pets:logout' %}">Logout</a></li>
                 {% else %}
-                    <li><a href="{}">Sign Up</a></li>
-                    <li><a href="{}">Login</a></li>
+                    <li><a href="{% url 'pets:register' %}">Sign Up</a></li>
+                    <li><a href="{% url 'rango:login' %}">Login</a></li>
                 {% endif %}
                     <li><a href="{% url 'pets:about' %}">About</a></li>
                     <li><a href="{% url 'pets:home' %}">Homepage</a></li>
