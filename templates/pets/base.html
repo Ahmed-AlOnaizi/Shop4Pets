@@ -31,7 +31,7 @@
                     <li><a href="{% url 'pets:logout' %}">Logout</a></li>
                 {% else %}
                     <li><a href="{% url 'pets:register' %}">Sign Up</a></li>
-                    <li><a href="{% url 'rango:login' %}">Login</a></li>
+                    <li><a href="{% url 'pets:login' %}">Login</a></li>
                 {% endif %}
                     <li><a href="{% url 'pets:about' %}">About</a></li>
                     <li><a href="{% url 'pets:home' %}">Homepage</a></li>
