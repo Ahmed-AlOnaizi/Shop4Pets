@@ -8,6 +8,7 @@ Created on Tue Mar 21 19:17:59 2023
 from django import forms
 from django.contrib.auth.models import User
 from pets.models import Category, Page, UserProfile
+from django.core.validators import MinValueValidator
 
 class CategoryForm(forms.ModelForm):
     name = forms.CharField(max_length=128, help_text="Please enter the pet type (e.g., dog, cat, or bird).")
@@ -20,7 +21,7 @@ class CategoryForm(forms.ModelForm):
 class PageForm(forms.ModelForm):
     title = forms.CharField(max_length=128, help_text="Please enter the title of the advert.")
     pet_name = forms.CharField(max_length=100, help_text="Please enter the name of the pet.")
-    age = forms.PositiveIntegerField(help_text="Please enter the pet's age.")
+    age = forms.IntegerField(validators=[MinValueValidator(0)], help_text="Please enter the pet's age.")
     breed = forms.CharField(max_length=100, help_text="Please enter the pet's breed.")
     contact = forms.CharField(max_length=255, help_text="Please enter your contact information.")
     description = forms.CharField(widget=forms.Textarea, help_text="Please enter a brief description of the pet.")

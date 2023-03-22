@@ -27,7 +27,7 @@ def checkout(request):
 
 from pets.forms import CategoryForm
 from pets.forms import PageForm
-from pets.models import Category
+from pets.models import Category, Page
 
 def add_category(request):
     form = CategoryForm()
@@ -42,6 +42,21 @@ def add_category(request):
             print(form.errors)
 
     return render(request, 'pets/add_category.html', {'form': form})
+
+def show_category(request, category_name_slug):
+    context_dict = {}
+
+    try:
+        category = Category.objects.get(slug=category_name_slug)
+        pages = Page.objects.filter(category=category)
+
+        context_dict['pages'] = pages
+        context_dict['category'] = category
+    except Category.DoesNotExist:
+        context_dict['category'] = None
+        context_dict['pages'] = None
+
+    return render(request, 'pets/category.html', context_dict)
 
 @login_required
 def add_page(request, category_name_slug):
