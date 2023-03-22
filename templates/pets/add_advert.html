@@ -1,26 +1,11 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
+{% extends 'pets/base.html' %}
 
+{% block body_block %}
+    <h1>Create a New Pet Advert</h1>
 
-{% block content %}
-  <h1>Create a New Pet Advert</h1>
-
-  {% if user.is_authenticated %}
-    <form method="post">
-      {% csrf_token %}
-      <label for="pet_name">Pet Name:</label>
-      <input type="text" id="pet_name" name="pet_name" required><br><br>
-      <label for="pet_type">Pet Type:</label>
-      <input type="text" id="pet_type" name="pet_type" required><br><br>
-      <label for="pet_description">Pet Description:</label>
-      <textarea id="pet_description" name="pet_description" required></textarea><br><br>
-      <label for="pet_price">Pet Price:</label>
-      <input type="number" id="pet_price" name="pet_price" required><br><br>
-      <label for="pet_contact">Contact:</label>
-      <input type="text" id="pet_contact" name="pet_contact" required><br><br>
-      <input type="submit" value="Create Advert">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
     </form>
-  {% else %}
-    <p>You need to be logged in to create a new pet advert. <a href="{% url 'pets:login' %}">Log in</a></p>
-  {% endif %}
 {% endblock %}

@@ -23,6 +23,7 @@ urlpatterns = [
     path('restricted/', views.restricted, name='restricted'),
     path('logout/', views.user_logout, name='logout'),
     path('register/', views.register, name='register'),
+    path('add_advert/', views.add_advert, name='add_advert'),
     
     
     

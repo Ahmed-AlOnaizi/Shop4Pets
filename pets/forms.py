@@ -9,6 +9,8 @@ from django import forms
 from django.contrib.auth.models import User
 from pets.models import Category, Page, UserProfile
 from django.core.validators import MinValueValidator
+from pets.models import PetAd
+
 
 class CategoryForm(forms.ModelForm):
     name = forms.CharField(max_length=128, help_text="Please enter the pet type (e.g., dog, cat, or bird).")
@@ -31,6 +33,11 @@ class PageForm(forms.ModelForm):
         model = Page
         exclude = ('category',)
         # or use fields attribute: fields = ('title', 'pet_name', 'age', 'breed', 'contact', 'description', 'image')
+        
+class PetAdForm(forms.ModelForm):
+    class Meta:
+        model = PetAd
+        fields = ('pet_name', 'description', 'image', 'contact_info')        
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())

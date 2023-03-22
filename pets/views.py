@@ -3,9 +3,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from pets.forms import CategoryForm
-from pets.forms import PageForm, UserProfileForm, UserForm
-from pets.models import Category, Page, PetAd
+from pets.forms import PageForm, UserProfileForm, UserForm, PetAdForm
+from pets.models import Category, Page, PetAd 
 from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -14,9 +15,14 @@ def base(request):
     context = {}
     return render(request, 'pets/base.html', context)
 
-def home(request):
+"""def home(request):
     ads = PetAd.objects.all()
     context = {'ads': ads}
+    return render(request, 'pets/home.html', context)"""
+
+def home(request):
+    adverts = Page.objects.all()
+    context = {'adverts': adverts}
     return render(request, 'pets/home.html', context)
 
 
@@ -116,6 +122,58 @@ def ad_detail(request, ad_id):
     ad = get_object_or_404(PetAd, id=ad_id)
     context = {'ad': ad}
     return render(request, 'pets/ad_detail.html', context)
+
+
+"""@login_required
+def add_advert(request):
+    if not request.user.is_authenticated:
+        return redirect('pets:login')
+
+    if request.method == 'POST':
+        form = PageForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            advert = form.save(commit=False)
+            advert.category = Category.objects.get_or_create(name="Default")[0]
+            advert.save()
+            return redirect('pets:home')
+    else:
+        form = PageForm()
+
+    context = {'form': form}
+    return render(request, 'pets/add_advert.html', context)"""
+
+"""@login_required
+def add_advert(request):
+    if request.method == 'POST':
+        form = PageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # Redirect to the desired page after successfully submitting the form
+            return HttpResponseRedirect('/pets/')
+    else:
+        form = PageForm()
+
+    context = {'form': form}
+    return render(request, 'pets/add_advert.html', context)"""
+
+@login_required
+def add_advert(request):
+    if request.method == 'POST':
+        form = PetAdForm(request.POST, request.FILES)
+        if form.is_valid():
+            pet_ad = form.save(commit=False)
+            pet_ad.user = request.user
+            pet_ad.save()
+            # Redirect to the desired page after successfully submitting the form
+            return HttpResponseRedirect('/pets/')
+    else:
+        form = PetAdForm()
+
+    context = {'form': form}
+    return render(request, 'pets/add_advert.html', context)
+
+
 
 def user_login(request):
     if request.method == 'POST':
