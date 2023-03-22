@@ -8,6 +8,8 @@ Created on Mon Mar 20 13:56:15 2023
 from django.urls import path
 from . import views
 
+app_name = 'pets'
+
 urlpatterns = [
     path('', views.home, name = "home"),
     path('about/',views.about, name = "about"),

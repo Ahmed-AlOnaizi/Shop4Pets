@@ -20,5 +20,5 @@ from pets import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name = "home"),
-    path('pets/',include('pets.urls'))
+    path('pets/',include('pets.urls', namespace='pets'))
 ]
