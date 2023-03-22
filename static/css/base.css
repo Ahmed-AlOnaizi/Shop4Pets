@@ -1,0 +1,51 @@
+#featured-animals {
+    margin: 20px 0;
+  }
+  #featured-animals h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  #featured-animals ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  #featured-animals li {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  #featured-animals li img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  #featured-animals li h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+  #featured-animals li p {
+    font-size: 16px;
+    margin: 0;
+  }
+* {
+     box-sizing: border-box !important;
+     transition: ease all 0.5s;
+}
+
+html {
+     scroll-behavior: smooth;
+}
+
+body {
+     color: #666666;
+     font-size: 14px;
+     font-family: 'Josefin Sans', sans-serif;;
+     line-height: 1.80857;
+     font-weight: normal;
+     overflow-x: hidden;
+}
