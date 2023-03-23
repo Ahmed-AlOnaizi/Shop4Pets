@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 {% load static %}
 {% load pets_template_tags %}
+<link rel="stylesheet" href="../../static/css/base.css">
 
 <html>
-    <head lang="en">
-        <link rel="stylesheet" href="../../static/css/base.css">
+    <header lang="en">
+    {% block header_block %}
+    <nav>
+        <div class="logo-search" id="logoSearch">
+            <a href="#"><img src="{% static 'images/logo.png' %}" alt="Shop4Pets logo" id = "logo"> </a>
+            <h1 id = "Title">Welcome to Shop4Pets </h1>
+
+
+            <div id="login">
+                <button id="loginButton"><img src="{% static 'images/login.png' %}" id="loginIcon"><br>Login/SignUp</button>
+                <div id="loginDropdown">
+                    <a href="#">Login</a>
+                    <a href="#">Sign Up</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
         <meta charset="UTF-8" />
-        <title>
-            Shop 4 Pets -
-            {% block title_block %}
-                Welcome to the Shop 4 Pets webpage!
-            {% endblock %}
-        </title>
-    </head>
+    </header>
+    {% endblock %}
     <body>
         <div>
         {% block body_block %}
