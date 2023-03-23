@@ -16,7 +16,7 @@ body {
 }
 
 * {
-  box-sizing: borderBox !important;
+  box-sizing: border-box !important;
   transition: ease all 0.5s;
 }
 
@@ -268,4 +268,129 @@ a:hover{
   #featuredAdvertBox p {
     font-size: 16px;
     margin: 0;
+  }
+  /* ABOUT PAGE*/
+
+  #aboutUs {
+    color: var(--light-color);
+    background-color: var(--primary-color);
+  }
+  #aboutUs h1{
+
+    font-size: 36px;
+    color: var(--light-color);
+    margin-bottom: 20px;
+
+}
+
+  #aboutUs div{
+    font-size: 18px;
+    color: var(--primary-color);
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+  #aboutUs strong {
+    font-weight:bold;
+  }
+  #aboutUs h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+/* Style the img element */
+  #aboutUs img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+  #Team {
+  background-color: var(--secondary-color);
+  max-height: 1800px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 5px;
+  margin: 20px 0 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+  #teamMember {
+    list-style-type: none;
+    background-color: var(--light-color);
+    margin:25px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  #teamMember img {
+    aspect-ratio:initial;
+    max-width: 95%;
+    max-height: 300px;
+
+
+    display: block;
+    margin: 10px 0px 0px 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #teamMember h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    color: var(--light-color);
+    grid-column: 1/span 3;
+    }
+
+  #teamMember p {
+    font-size: 16px;
+    margin: 0;
+  }
+  #Reviews {
+    list-style-type: none;
+    background-color: var(--primary-color);
+    margin:25px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  #Reviews h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    color: var(--light-color);
+    grid-column: 1/span 3;
+  }
+  #Reviews Customers {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-color: black;
+    grid-column: 1/span 3;
+  }
+
+  #Login {
+    list-style-type: none;
+    background-color: var(--accent-color);
+    margin:25px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  #Register {
+    list-style-type: none;
+    background-color: var(--accent-color);
+    margin:25px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }

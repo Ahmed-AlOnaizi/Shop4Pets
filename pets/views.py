@@ -32,6 +32,10 @@ def about(request):
 
 
 
+def reviews(request):
+    context = {}
+    return render(request, 'pets/reviews.html', context)
+
 def search(request):
     context = {}
     return render(request, 'pets/search.html', context)

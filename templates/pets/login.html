@@ -6,7 +6,9 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>Login to Shop4Pets</h1>
+    <div id = "Login">
+    <h1>Login to Shop4Pets</h1>
+    <link rel="stylesheet" href="../../static/css/base.css">
 <form id="login_form" method="post" action="{% url 'pets:login' %}">
     {% csrf_token %}
     Username: <input type="text" name="username" value="" size="50" />
@@ -15,4 +17,6 @@
     <br />
     <input type="submit" value="submit" />
 </form>
+    </div>
+
 {% endblock %}

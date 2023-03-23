@@ -3,82 +3,45 @@
 {% block title_block %}
     Welcome to Shop4Pets!
 {% endblock %}
+{% block header_block %}
 
+        <form action="#" method="get" id="searchBar">
+            <input type="text" placeholder="Search pets...">
+            <button href = "{% url 'pets:search' %}"  id="searchBarButton">
+                <img src="{% static 'images/search.png' %}"></button><!-- type="submit" -->
+        </form>
+        <h1 style="text-align: center;"> Search By Category </h1>
+        <div id = "CategoriesOfAnimals">
+
+
+
+            <div style = "grid-column: 1; grid-row: 1;">
+                <a href="#">Dogs
+                <img src="{% static 'images/dogCategory.jpg' %}" alt = "Category of dogs"/></a>
+
+            </div>
+
+            <div style = "grid-column: 2; grid-row: 1";>
+                <a href="#">Cats
+                <img src ="{%static 'images/miloCategory.jpg'  %}" alt = "Category of cats"/></a>
+            </div>
+            <div style = "grid-column: 3; grid-row: 1;">
+                <a href="#">Birds
+                <img src ="{% static 'images/birdCategory.jpg' %}" alt = "Category of birds"/></a>
+            </div>
+            <div style = "grid-column: 1; grid-row: 2;">
+                <a href="#">Fish
+                <img src ="{% static 'images/fishCategory.jpg' %}" alt = "Category of fish"/></a>
+            </div>
+            <div style = "grid-column: 2; grid-row: 2;">
+                <a href="#">Small pets
+                <img src = "{% static 'images/hamsterCategory.jpg' %}" alt = "Category of small pets"/></a>
+            </div>
+        </div>
+{% endblock %}
 {% block body_block %}
 
-    <header>
-    <link rel="stylesheet" href="../../static/css/base.css">
-    <nav>
-        <div class="logo-search" id="logoSearch">
-            <a href="#"><img src="{% static 'images/logo.png' %}" alt="Shop4Pets logo" id = "logo"> </a>
-            <h1 id = "Title">Welcome to Shop4Pets </h1>
 
-            <form action="#" method="get" id="searchBar">
-                <input type="text" placeholder="Search pets...">
-                <button href = "{% url 'pets:search' %}"  id="searchBarButton"><img src="{% static 'images/search.png' %}"></button><!-- type="submit" -->
-            </form>
-            <div id="login">
-                <button id="loginButton"><img src="{% static 'images/login.png' %}" id="loginIcon"><br>Login/SignUp</button>
-                <div id="loginDropdown">
-                    <a href="#">Login</a>
-                    <a href="#">Sign Up</a>
-                </div>
-            </div>
-                
-        </div>
-
-        <section id="pet-adverts">
-    <h2>New Pet Adverts</h2>
-    <ul>
-        {% for advert in adverts %}
-        <li>
-            <h3>{{ advert.title}}</h3>
-            <a href="{% url 'pets:advert_detail' advert.id %}">View Details</a>
-            <img src="{{ advert.photo.url }}" alt="{{ advert.title }}" />
-            <p>{{ advert.description }}</p>
-        </li>
-        {% empty %}
-        <li>
-            <p>No pet adverts available at the moment.</p>
-        </li>
-        {% endfor %}
-    </ul>
-</section>
-
-
-        
-
-    </nav>
-    
-            <h1 style="text-align: center;"> Search By Category </h1>
-            <div id = "CategoriesOfAnimals">
-                
-
-
-                <div style = "grid-column: 1; grid-row: 1;">
-                    <a href="#">Dogs
-                    <img src="{% static 'images/dogCategory.jpg' %}" alt = "Category of dogs"/></a>
-
-                </div>
-
-                <div style = "grid-column: 2; grid-row: 1";>
-                    <a href="#">Cats
-                    <img src ="{%static 'images/miloCategory.jpg'  %}" alt = "Category of cats"/></a>
-                </div>
-                <div style = "grid-column: 3; grid-row: 1;">
-                    <a href="#">Birds
-                    <img src ="{% static 'images/birdCategory.jpg' %}" alt = "Category of birds"/></a>
-                </div>
-                <div style = "grid-column: 1; grid-row: 2;">
-                    <a href="#">Fish
-                    <img src ="{% static 'images/fishCategory.jpg' %}" alt = "Category of fish"/></a>
-                </div>
-                <div style = "grid-column: 2; grid-row: 2;">
-                    <a href="#">Small pets
-                    <img src = "{% static 'images/hamsterCategory.jpg' %}" alt = "Category of small pets"/></a>
-                </div>
-            </div>
-    </header>
     <main>
         <section id="hero">
             <div class="hero-text">
@@ -129,6 +92,23 @@
                 <p>This friendly goldfish needs a new tank to call home! They're easy to care for. </p>
             </div>
         </section>
+    <section id="pet-adverts">
+    <h2>New Pet Adverts</h2>
+    <ul>
+        {% for advert in adverts %}
+        <li>
+            <h3>{{ advert.title}}</h3>
+            <a href="{% url 'pets:advert_detail' advert.id %}">View Details</a>
+            <img src="{{ advert.photo.url }}" alt="{{ advert.title }}" />
+            <p>{{ advert.description }}</p>
+        </li>
+        {% empty %}
+        <li>
+            <p>No pet adverts available at the moment.</p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
 		<!--<section id="latestAdverts">
     <h2>Latest Animals</h2>
      {% if latest_adverts %}
@@ -177,6 +157,7 @@
             {% endif %}
                 <li><a href="{% url 'pets:about' %}">About</a></li>
                 <li><a href="{% url 'pets:home' %}">Homepage</a></li>
+                <li><a href="{% url 'pets:reviews' %}">Reviews</a></li>
         </ul>
         <div class="footer-bottom">
             <p>© 2023 Shop4Pets. All Rights Reserved.</p>
