@@ -20,9 +20,14 @@ def base(request):
     context = {'ads': ads}
     return render(request, 'pets/home.html', context)"""
 
-def home(request):
+"""def home(request):
     adverts = Page.objects.all()
     context = {'adverts': adverts}
+    return render(request, 'pets/home.html', context)"""
+
+def home(request):
+    latest_adverts = PetAd.objects.order_by('-id')[:6]
+    context = {'latest_adverts': latest_adverts}
     return render(request, 'pets/home.html', context)
 
 
