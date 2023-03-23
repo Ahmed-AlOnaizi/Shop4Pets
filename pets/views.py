@@ -30,13 +30,7 @@ def about(request):
     context = {}
     return render(request, 'pets/about.html', context)
 
-def cart(request):
-    context = {}
-    return render(request, 'pets/cart.html', context)
 
-def checkout(request):
-    context = {}
-    return render(request, 'pets/checkout.html', context)
 
 def search(request):
     context = {}
