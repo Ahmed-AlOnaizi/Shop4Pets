@@ -61,7 +61,7 @@ def register(request):
     return render(request, 'pets/register.html',
                   {'user_form': user_form, 'registered': registered})
 
-@login_required
+
 def delete_advert(request, ad_id):
     advert = get_object_or_404(PetAd, pk=ad_id)
     if request.user == advert.user:
