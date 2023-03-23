@@ -37,7 +37,7 @@ header {
   color: var(--light-color);
   padding: 30px;
   display: grid;
-  grid-template-columns: 30% 50% 20%;
+  grid-template-columns: 30% 60% 10%;
   grid-gap: 10px;
 }
 #loginIcon {
@@ -60,7 +60,7 @@ header {
   font-size: 52px;
   grid-column: 2;
 }
-#signin {
+#dropdown {
   grid-column: 3;
 }
 
@@ -129,43 +129,64 @@ a:hover{
     border-radius:50%;
     border-color: transparent;
   }
+  #searchBarButton:hover {
+    background-color: #ba4225;
+  }
   #searchBarButton img {
     height: 25px;
     width: 25px;
   }
 
+
+
   /* ALL LOGIN DROPDOWN CSS */
-  .dropdown {
+  
+  #login {
     position: relative;
     display: inline-block;
   }
   
-  .dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+    #loginButton {
+      background-color: transparent;
+      color: var(--light-color);
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    
+    #loginDropdown {
+      display: none;
+      position: absolute;
+      background-color: #52A3CC;
+      min-width: 160px;
+      border-radius: 10px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    /* Links inside the dropdown */
+    #loginDropdown a {
+      color: var(--light-color);
+      padding: 12px 16px;
+      text-decoration: none;
+      display:block;
+    }
+    
+    #loginDropdown a:hover {
+      background-color: #275b75; 
+      border-radius: 10px;
+    }
+    
+    #login:hover #loginDropdown {
+      display: block;
+    }
+  
+
 
 
 /* CATEGORY SECTION IN HOME PAGE*/
-
-  h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: var(--accent-color);
-  grid-column: 1/span 3;
-  }
-
-
-
 #hero {
   color: black;
 }
@@ -200,8 +221,8 @@ a:hover{
   background-color: var(--secondary-color);
   max-height: 1800px;
   display: grid;
-  grid-template-columns: 30% 30% 30%;
-  grid-gap: 10px;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 5px;
   margin: 20px 0 0 20px;
   margin-left: auto;
   margin-right: auto;
@@ -233,6 +254,14 @@ a:hover{
     margin-left: auto;
     margin-right: auto;
   }
+  #featuredAdverts h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    grid-column: 1/span 3;
+    }
 
   #featuredAdvertBox p {
     font-size: 16px;

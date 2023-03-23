@@ -15,17 +15,16 @@
 
             <form action="#" method="get" id="searchBar">
                 <input type="text" placeholder="Search pets...">
-                <button type="submit" id="searchBarButton"><img src="{% static 'images/search.png' %}"></button>
+                <button href = "{% url 'pets:search' %}"  id="searchBarButton"><img src="{% static 'images/search.png' %}"></button><!-- type="submit" -->
             </form>
-
-            <div class="signin">
-                <div class="dropdown">
-                    <span><img src="{% static 'images/login.png' %}" id="loginIcon"></span>
-                    <div class="dropdownContent">
-                    <a href="#">Login</a> / <a href="#">Sign Up</a>
-                    </div>
+            <div id="login">
+                <button id="loginButton"><img src="{% static 'images/login.png' %}" id="loginIcon"><br>Login/SignUp</button>
+                <div id="loginDropdown">
+                    <a href="#">Login</a>
+                    <a href="#">Sign Up</a>
                 </div>
             </div>
+                
         </div>
 
         <!-- <section id="pet-adverts">
@@ -51,6 +50,7 @@
         
 
     </nav>
+    
             <h1 style="text-align: center;"> Search By Category </h1>
             <div id = "CategoriesOfAnimals">
                 
@@ -93,7 +93,7 @@
 			
         
         <section id="featuredAdverts">
-            <h2 >Featured Animals</h2>    
+            <h2>Featured Animals</h2>    
             <div id="featuredAdvertBox">
                 <a href="/pets/advert1/">Five-month bunny looking to rehome!</a><br />
                 <img src="{% static 'images/bunny.jpg' %}" alt="Advert 1" />
