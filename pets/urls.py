@@ -13,6 +13,7 @@ app_name = 'pets'
 urlpatterns = [
     path('', views.home, name = "home"),
     path('about/',views.about, name = "about"),
+    path('reviews/',views.reviews, name = "reviews"),
     path('cart/', views.cart, name = "cart"),
     path('checkout/', views.checkout, name = "checkout"),
     path('search/', views.search, name = "search"),
