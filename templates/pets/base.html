@@ -1,58 +1,72 @@
 <!DOCTYPE html>
 {% load static %}
 {% load pets_template_tags %}
-<link rel="stylesheet" href="../../static/css/base.css">
+
 
 <html>
-    <header lang="en">
-    {% block header_block %}
-    <nav>
-        <div class="logo-search" id="logoSearch">
-            <a href="#"><img src="{% static 'images/logo.png' %}" alt="Shop4Pets logo" id = "logo"> </a>
-            <h1 id = "Title">Welcome to Shop4Pets </h1>
-
-
-            <div id="login">
-                <button id="loginButton"><img src="{% static 'images/login.png' %}" id="loginIcon"><br>Login/SignUp</button>
-                <div id="loginDropdown">
-                    <a href="#">Login</a>
-                    <a href="#">Sign Up</a>
-                </div>
-            </div>
-
-        </div>
-    </nav>
+    
+    <head lang="en">
+        <link rel="stylesheet" href="../../static/css/base.css">
         <meta charset="UTF-8" />
-    </header>
-    {% endblock %}
+    </head>
     <body>
         <div>
+        
+        <nav>
+            
+            <div class="logo-search" id="logoSearch">
+                <a href="{% url 'pets:home' %}"><img src="{% static 'images/logo.png' %}" alt="Shop4Pets logo" id = "logo"> </a>
+                <h1 id = "Title">Shop4Pets </h1>
+
+                {% if user.is_authenticated %} 
+                    <div id="login">
+                        <button id="loginButton"><img src="{% static 'images/login.png' %}" id="loginIcon"><br>Profile</button>
+                        <div id="loginDropdown">
+                            <a href="{% url 'pets:add_advert' %}">Create a New Pet Advert</a>
+                            <a href="{% url 'pets:restricted' %}">Restricted Page</a>
+                            <a href="{% url 'pets:logout' %}">Logout</a>
+                        </div>
+                    </div>
+                {% else %}   
+                    <div id="login">
+                        <button id="loginButton"><img src="{% static 'images/login.png' %}" id="loginIcon"><br>Login/SignUp</button>
+                        <div id="loginDropdown">
+                            <a href="{% url 'pets:login' %}">Login</a>
+                            <a href="{% url 'pets:register' %}">Sign Up</a>
+                        </div>
+                    </div>
+                {% endif %}   
+            </div>
+        </nav>
         {% block body_block %}
+
         {% endblock %}
         </div>
         <div>
              <!--{% block sidebar_block %}-->
                  {% get_category_list %}
              {% endblock %}
-        </div>
-        <hr />
-        <div>
-            {% block footer %}
-            <ul>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'pets:add_advert' %}">Create a New Pet Advert</a></li>
-                    <li><a href="{% url 'pets:restricted' %}">Restricted Page</a></li>
-                    <li><a href="{% url 'pets:logout' %}">Logout</a></li>
-                {% else %}
-                    <li><a href="{% url 'pets:register' %}">Sign Up</a></li>
-                    <li><a href="{% url 'pets:login' %}">Login</a></li>
-                {% endif %}
-                    <li><a href="{% url 'pets:about' %}">About</a></li>
-                    <li><a href="{% url 'pets:home' %}">Homepage</a></li>
-                    <li><a href="{% url 'pets:reviews' %}">Reviews</a></li>
-                    <li><a href="{% url 'pets:faq' %}">FAQ</a></li>
-            </ul>
-            {% endblock %}
-        </div>
+             <footer>
+                <div class="footer-content">
+                    <div class="logo">
+                        <a href="{% url 'pets:home' %}"><img src="{% static 'images/logo.png' %}" alt="Shop4Pets logo" id= "logo"></a>
+                    </div>
+                    <div class="socials">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+                <ul>
+                        <li><a href="{% url 'pets:about' %}">About</a></li>
+                        <li><a href="{% url 'pets:home' %}">Homepage</a></li>
+                        <li><a href="{% url 'pets:reviews' %}">Reviews</a></li>
+                        <li><a href="{% url 'pets:faq' %}">FAQ</a></li>
+                </ul>
+                <div class="footer-bottom">
+                    <p>© 2023 Shop4Pets. All Rights Reserved.</p>
+                </div>
+            </footer>
+        
     </body>
 </html>

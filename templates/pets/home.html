@@ -3,43 +3,34 @@
 {% block title_block %}
     Welcome to Shop4Pets!
 {% endblock %}
-{% block header_block %}
-
+    {% block body_block %}
         <form action="#" method="get" id="searchBar">
             <input type="text" placeholder="Search pets...">
-            <button href = "{% url 'pets:search' %}"  id="searchBarButton">
-                <img src="{% static 'images/search.png' %}"></button><!-- type="submit" -->
+            <button href = "{% url 'pets:search' %}"  id="searchBarButton"><img src="{% static 'images/search.png' %}"></button><!-- type="submit" -->
         </form>
-        <h1 style="text-align: center;"> Search By Category </h1>
+        
         <div id = "CategoriesOfAnimals">
+            <h1 style = "grid-column: 2; grid-row: 1; font-size: 32px;"> Search By Category </h1>
 
 
-
-            <div style = "grid-column: 1; grid-row: 1;">
-                <a href="#">Dogs
-                <img src="{% static 'images/dogCategory.jpg' %}" alt = "Category of dogs"/></a>
-
-            </div>
-
-            <div style = "grid-column: 2; grid-row: 1";>
-                <a href="#">Cats
-                <img src ="{%static 'images/miloCategory.jpg'  %}" alt = "Category of cats"/></a>
-            </div>
-            <div style = "grid-column: 3; grid-row: 1;">
-                <a href="#">Birds
-                <img src ="{% static 'images/birdCategory.jpg' %}" alt = "Category of birds"/></a>
-            </div>
             <div style = "grid-column: 1; grid-row: 2;">
-                <a href="#">Fish
-                <img src ="{% static 'images/fishCategory.jpg' %}" alt = "Category of fish"/></a>
+                <a href="#"><img src="{% static 'images/dogCategory.jpg' %}" alt = "Category of dogs"/></a>
             </div>
-            <div style = "grid-column: 2; grid-row: 2;">
-                <a href="#">Small pets
-                <img src = "{% static 'images/hamsterCategory.jpg' %}" alt = "Category of small pets"/></a>
+
+            <div style = "grid-column: 2; grid-row: 2";>
+                <a href="#"><img src ="{%static 'images/miloCategory.jpg'  %}" alt = "Category of cats"/></a>
+            </div>
+            <div style = "grid-column: 3; grid-row: 2;">
+                <a href="#"><img src ="{% static 'images/birdCategory.jpg' %}" alt = "Category of birds"/></a>
+            </div>
+            <div style = "grid-column: 1; grid-row: 3;">
+                <a href="#"><img src ="{% static 'images/fishCategory.jpg' %}" alt = "Category of fish"/></a>
+            </div>
+            <div style = "grid-column: 2; grid-row: 3;">
+                <a href="#"><img src = "{% static 'images/hamsterCategory.jpg' %}" alt = "Category of small pets"/></a>
             </div>
         </div>
-{% endblock %}
-{% block body_block %}
+
 
 
     <main>
@@ -137,35 +128,4 @@
 </section>-->
 		
     </main>
-{% endblock %}
-{% block footer %}
-    <footer>
-        <div class="footer-content">
-            <div class="logo">
-                <a href="#"><img src="{% static 'images/logo.png' %}" alt="Shop4Pets logo" id= "logo"></a>
-            </div>
-            <div class="socials">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-        </div>
-        <ul>
-             {% if user.is_authenticated %} 
-                <li><a href="{% url 'pets:add_advert' %}">Create a New Pet Advert</a></li>
-                <li><a href="{% url 'pets:restricted' %}">Restricted Page</a></li>
-                <li><a href="{% url 'pets:logout' %}">Logout</a></li>
-            {% else %}
-                <li><a href="{% url 'pets:register' %}">Sign Up</a></li>
-                <li><a href="{% url 'pets:login' %}">Login</a></li>
-            {% endif %}
-                <li><a href="{% url 'pets:about' %}">About</a></li>
-                <li><a href="{% url 'pets:home' %}">Homepage</a></li>
-                <li><a href="{% url 'pets:reviews' %}">Reviews</a></li>
-                <li><a href="{% url 'pets:faq' %}">FAQ</a></li>
-        </ul>
-        <div class="footer-bottom">
-            <p>© 2023 Shop4Pets. All Rights Reserved.</p>
-        </div>
-    </footer>
 {% endblock %}

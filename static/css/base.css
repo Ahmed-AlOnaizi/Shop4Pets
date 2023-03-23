@@ -35,16 +35,16 @@ header {
 #logoSearch {
   background-color: var(--secondary-color);
   color: var(--light-color);
-  padding: 30px;
+  padding: 10px;
   display: grid;
-  grid-template-columns: 30% 60% 10%;
+  grid-template-columns: 40% 50% 10%;
   grid-gap: 10px;
 }
 #loginIcon {
   width:100%;
   height:100%;
-  max-width:100px;
-  max-height:100px;
+  max-width:150px;
+  max-height:150px;
   padding-right:0px;
   float:right;
 }
@@ -85,6 +85,7 @@ footer {
 }
 footer ul{
   list-style-type: none;
+  font-size: 16px;
   float:right;
   grid-row: 1;
   grid-column: 3;
@@ -111,9 +112,11 @@ a:hover{
   display: flex;
   align-items: center;
   border-radius: 20px;
+  margin: -10px auto 20px auto;
   padding: 10px;
   grid-row: 2 / span 1;
   grid-column: 2 / span 2;
+  
 }
   #searchBar input {
     background: transparent;
@@ -130,7 +133,7 @@ a:hover{
     border-color: transparent;
   }
   #searchBarButton:hover {
-    background-color: #ba4225;
+    background-color: #568c56;
   }
   #searchBarButton img {
     height: 25px;
@@ -194,21 +197,21 @@ a:hover{
 
 
 #CategoriesOfAnimals {
-
-  height: 600px;
+  background-color: var(--primary-color);
+  height: 1000px;
   display:grid;
   text-align: center;
+  grid-template-rows: 10% 45% 45%;
   font-size: 24px;
-  
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
   #CategoriesOfAnimals img {
     aspect-ratio:initial;
     max-width: 95%;
-    height: 200px;
+    height: 300px;
     display: block;
-    margin: 10px 0px 0px 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto 10px auto;
   }
   #CategoriesOfAnimals a {
     color: var(--light-color);
@@ -266,6 +269,7 @@ a:hover{
     }
 
   #featuredAdvertBox p {
+    color: black;
     font-size: 16px;
     margin: 0;
   }
@@ -274,8 +278,9 @@ a:hover{
   #aboutUs {
     color: var(--light-color);
     background-color: var(--primary-color);
+    border-radius: 10px;
   }
-  #aboutUs h1{
+  #aboutUs h1 h2{
 
     font-size: 36px;
     color: var(--light-color);
@@ -292,11 +297,7 @@ a:hover{
   #aboutUs strong {
     font-weight:bold;
   }
-  #aboutUs h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
+
 
 
 /* Style the img element */
@@ -311,9 +312,8 @@ a:hover{
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-gap: 5px;
-  margin: 20px 0 0 20px;
-  margin-left: auto;
-  margin-right: auto;
+
+  margin: 20px auto 20px auto;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -321,6 +321,7 @@ a:hover{
   #teamMember {
     list-style-type: none;
     background-color: var(--light-color);
+    font-weight: bold;
     margin:25px;
     padding: 10px;
     border-radius: 10px;

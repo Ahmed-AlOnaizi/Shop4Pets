@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block body_block %}
+    
     <h1>{{ ad.title }}</h1>
     <img src="{{ ad.image.url }}" alt="{{ ad.title }}">
     <p>{{ ad.description }}</p>
     <p>Contact information: {{ ad.contact_info }}</p>
     <p>Location: {{ ad.location }}</p>	
 	<p><a href="{% url 'pets:delete_advert' ad.id %}" class="btn btn-danger">Delete Advert</a></p>
-
 {% endblock %}
