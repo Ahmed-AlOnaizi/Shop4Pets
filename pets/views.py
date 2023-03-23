@@ -30,7 +30,9 @@ def about(request):
     context = {}
     return render(request, 'pets/about.html', context)
 
-
+def faq(request):
+    context = {}
+    return render(request, 'pets/faq.html', context)
 
 def reviews(request):
     context = {}
