@@ -11,6 +11,9 @@
             <a href="#"><img src="{% static 'images/logo.png' %}" alt="Shop4Pets logo" id = "logo"> </a>
             <h1 id = "Title">Welcome to Shop4Pets </h1>
             {% if user.is_authenticated %}
+                <div id="login">
+                <button id="loginButton"><img src="{% static 'images/login.png' %}" id="loginIcon"><br>Profile</button>
+                <div id="loginDropdown">
                 <li><a href="{% url 'pets:add_advert' %}">Create a New Pet Advert</a></li>
                 <li><a href="{% url 'pets:restricted' %}">Restricted Page</a></li>
                 <li><a href="{% url 'pets:logout' %}">Logout</a></li>
@@ -20,9 +23,9 @@
                 <div id="loginDropdown">
                     <a href="{% url 'pets:login' %}">Login</a>
                     <a href="{% url 'pets:register' %}">Sign Up</a>
-            {% endif %}
                 </div>
             </div>
+            {% endif %}
         </div>
     </nav>
         <meta charset="UTF-8" />
