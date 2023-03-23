@@ -27,21 +27,24 @@
                 
         </div>
 
-        <!-- <section id="pet-adverts">
-            <h2> New Pet Adverts</h2>
-            <ul>
-                {% for advert in adverts %}
-                <li>
-                    <h3>{{ advert.title}}</h3>h3>
-                    <a href="{% url 'pets:advert_detail' advert.id %}"> View Details </a>
-                    <img src = "{{ advert.photo.url }}" alt = "{{ advert.title }}" />
-                    <p>{{ advert.description }}</p>
-                </li>
-                {% endfor %}
-                    </h3>
-                </li>
-            </ul>
-        </section> -->
+        <section id="pet-adverts">
+    <h2>New Pet Adverts</h2>
+    <ul>
+        {% for advert in adverts %}
+        <li>
+            <h3>{{ advert.title}}</h3>
+            <a href="{% url 'pets:advert_detail' advert.id %}">View Details</a>
+            <img src="{{ advert.photo.url }}" alt="{{ advert.title }}" />
+            <p>{{ advert.description }}</p>
+        </li>
+        {% empty %}
+        <li>
+            <p>No pet adverts available at the moment.</p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
 
         
 
@@ -87,7 +90,7 @@
 
 
 			
-        
+       
         <section id="featuredAdverts">
             <h2>Featured Animals</h2>    
             <div id="featuredAdvertBox">
@@ -126,6 +129,29 @@
                 <p>This friendly goldfish needs a new tank to call home! They're easy to care for. </p>
             </div>
         </section>
+		<!--<section id="latestAdverts">
+    <h2>Latest Animals</h2>
+     {% if latest_adverts %}
+        <h1>Latest Adverts</h1>
+        <ul>
+            {% for ad in latest_adverts %}
+                <li>
+                    <a href="{% url 'ad_detail' ad.id %}">
+                        <img src="{{ ad.image.url }}" alt="{{ ad.title }}" width="200px" height="200px">
+                    </a>
+                    <br>
+                    <a href="{% url 'ad_detail' ad.id %}">{{ ad.title }}</a>
+                    <p>{{ ad.description }}</p>
+                    <p>Location: {{ ad.location }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no adverts at the moment.</p>
+    {% endif %}
+    </div>
+</section>-->
+		
     </main>
 {% endblock %}
 {% block footer %}
@@ -141,14 +167,14 @@
             </div>
         </div>
         <ul>
-            <!-- {% if user.is_authenticated %} -->
+             {% if user.is_authenticated %} 
                 <li><a href="{% url 'pets:add_advert' %}">Create a New Pet Advert</a></li>
                 <li><a href="{% url 'pets:restricted' %}">Restricted Page</a></li>
                 <li><a href="{% url 'pets:logout' %}">Logout</a></li>
-            <!--{% else %}-->
+            {% else %}
                 <li><a href="{% url 'pets:register' %}">Sign Up</a></li>
                 <li><a href="{% url 'pets:login' %}">Login</a></li>
-            <!--{% endif %}-->
+            {% endif %}
                 <li><a href="{% url 'pets:about' %}">About</a></li>
                 <li><a href="{% url 'pets:home' %}">Homepage</a></li>
         </ul>

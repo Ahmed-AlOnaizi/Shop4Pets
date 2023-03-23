@@ -24,6 +24,7 @@
         </div>
         <hr />
         <div>
+            {% block footer %}
             <ul>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'pets:add_advert' %}">Create a New Pet Advert</a></li>
@@ -36,6 +37,7 @@
                     <li><a href="{% url 'pets:about' %}">About</a></li>
                     <li><a href="{% url 'pets:home' %}">Homepage</a></li>
             </ul>
+            {% endblock %}
         </div>
     </body>
 </html>

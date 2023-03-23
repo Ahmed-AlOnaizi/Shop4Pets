@@ -6,7 +6,7 @@ Created on Mon Mar 20 13:56:15 2023
 """
 
 from django.urls import path
-from . import views
+from . import views 
 
 app_name = 'pets'
 
@@ -15,15 +15,17 @@ urlpatterns = [
     path('about/',views.about, name = "about"),
     path('cart/', views.cart, name = "cart"),
     path('checkout/', views.checkout, name = "checkout"),
+    path('search/', views.search, name = "search"),
     path('add_page/<str:category_name_slug>/', views.add_page, name='add_page'),
     path('category/<slug:category_name_slug>/', views.show_category, name='show_category'),
     path('add_category/', views.add_category, name='add_category'),
     path('login/', views.user_login, name='login'),
-    path('ad/<int:ad_id>/', views.ad_detail, name='ad_detail'),
+    path('ad/<int:ad_id>/', views.ad_detail, name='advert_detail'),
     path('restricted/', views.restricted, name='restricted'),
     path('logout/', views.user_logout, name='logout'),
     path('register/', views.register, name='register'),
     path('add_advert/', views.add_advert, name='add_advert'),
+    path('delete_advert/<int:ad_id>/', views.delete_advert, name='delete_advert'),
     
     
     

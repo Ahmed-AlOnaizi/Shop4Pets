@@ -20,14 +20,9 @@ def base(request):
     context = {'ads': ads}
     return render(request, 'pets/home.html', context)"""
 
-"""def home(request):
-    adverts = Page.objects.all()
-    context = {'adverts': adverts}
-    return render(request, 'pets/home.html', context)"""
-
 def home(request):
-    latest_adverts = PetAd.objects.order_by('-id')[:6]
-    context = {'latest_adverts': latest_adverts}
+    adverts = PetAd.objects.all()
+    context = {'adverts': adverts}
     return render(request, 'pets/home.html', context)
 
 
@@ -42,6 +37,10 @@ def cart(request):
 def checkout(request):
     context = {}
     return render(request, 'pets/checkout.html', context)
+
+def search(request):
+    context = {}
+    return render(request, 'pets/search.html', context)
 
 def register(request):
     registered = False
@@ -62,11 +61,20 @@ def register(request):
     return render(request, 'pets/register.html',
                   {'user_form': user_form, 'registered': registered})
 
+@login_required
+def delete_advert(request, ad_id):
+    advert = get_object_or_404(PetAd, pk=ad_id)
+    if request.user == advert.user:
+        advert.delete()
+        return redirect('pets:home')
+    else:
+        return redirect('pets:restricted')
+
 
 @login_required
 def user_logout(request):
     logout(request)
-    return redirect(reverse('rango:index'))
+    return redirect(reverse('pets:home'))
 
 
 
@@ -201,6 +209,5 @@ def user_login(request):
     
 @login_required
 def restricted(request):
-    return HttpResponse("Since you're logged in, you can see this text!")
-    return render(request, 'rango/restricted.html')
-
+    return HttpResponse("You are officially registered in Shop4Pets")
+    return render(request, 'pets/restricted.html')
