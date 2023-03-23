@@ -409,3 +409,15 @@ a:hover{
     grid-column: 1/span 3;
 
   }
+
+  #petAdverts {
+    color: var(--secondary-color)
+  }
+  #AdvertDetail a {
+    color: white;
+
+  }
+
+  #AdvertDetail p {
+    color: var(--secondary-color);
+  }
