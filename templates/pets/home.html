@@ -103,15 +103,24 @@
                 <p>No pet adverts available at the moment.</p>
             </li>
 
+
             {% endfor %}
         </ul>
     </section>
-		<!--<section id="latestAdverts">
+		<section id="latestAdverts">
+        {% endfor %}
+    </ul>
+</section>
+
+    <section id="latestAdverts">
     <h2>Latest Animals</h2>
-     {% if latest_adverts %}
+    {% if latest_adverts %}
         <h1>Latest Adverts</h1>
         <ul>
+        <div id = "petAdverts">
+
             {% for ad in latest_adverts %}
+
                 <li>
                     <a href="{% url 'ad_detail' ad.id %}">
                         <img src="{{ ad.image.url }}" alt="{{ ad.title }}" width="200px" height="200px">
@@ -120,14 +129,21 @@
                     <a href="{% url 'ad_detail' ad.id %}">{{ ad.title }}</a>
                     <p>{{ ad.description }}</p>
                     <p>Location: {{ ad.location }}</p>
+                </div>
+
                 </li>
+
             {% endfor %}
         </ul>
     {% else %}
         <p>There are no adverts at the moment.</p>
     {% endif %}
+
+</section>
     </div>
-</section>-->
+
+
+
 		
     </main>
 {% endblock %}
