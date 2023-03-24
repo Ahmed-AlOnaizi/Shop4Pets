@@ -8,6 +8,7 @@ Shop4Pets is a website for pet lovers that want to either put their pets for ado
 
 ## Running the code
 
+- First run 'pip install -r requirements.txt' to install necessary packages
 - Use 'python manage.py runserver' to run the server
 - Use 'python manage.py migrate' to migrate changes to models etc. Make sure to use 'python manage.py makemigrations before'.
 - To run the population script use 'python populate_script.py'
