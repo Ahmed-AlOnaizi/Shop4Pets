@@ -413,15 +413,19 @@ a:hover{
 
   #searchResults {
     background-color: var(--primary-color);
-    
-    
+    list-style-type: none;
+    border-radius: 10px;
+    margin: 10px auto 10px auto;
+    padding: 10px;
+  }
+  #searchResults li{
+    list-style-type: none;
   }
   #searchResults h2 {
     color: var(--light-color);
     margin: 10px;
   }
   #AdvertDetail{
-    list-style-type: none;
     background-color: var(--light-color);
     color: var(--primary-color);
     margin:25px; 

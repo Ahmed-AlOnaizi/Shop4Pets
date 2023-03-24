@@ -1,11 +1,10 @@
 {% extends 'pets/base.html' %}
 {% load static %}
-
 {% block title_block %}
-     My Profile
+    Welcome to Shop4Pets!
 {% endblock %}
-
-{% block body_block %}
+    {% block body_block %}
+    
      <h1>My Profile</h1>
      <div>
          <a href="{% url 'pets:home' %}">Homepage</a>

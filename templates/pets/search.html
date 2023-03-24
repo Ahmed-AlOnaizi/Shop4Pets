@@ -16,7 +16,7 @@
             <li>
               <div id="AdvertDetail">
                 <a href="{% url 'pets:advert_detail' advert.id %}">{{ advert.pet_name }}</a>
-                <img src="{{ advert.photo.url }}" alt="{{ advert.title }}" />
+                <img src="{{ advert.image.url }}" alt="{{ advert.pet_name }}" />
                 <p>{{ advert.description }}</p>
               </div>
             </li>
@@ -27,22 +27,6 @@
           {% endfor %}
         </ul>
     </div>
-    <!--<h1>Search Results</h1>
-    {% if results %}
-        <ul>
-            {% for result in results %}
-                <li>
-                    <h3>{{ result.title }}</h3>
-                    <a href="{% url 'pets:advert_detail' result.id %}">View Details</a>
-                    <img src="{{ result.photo.url }}" alt="{{ result.title }}" />
-                    <p>{{ result.description }}</p>
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No results found.</p>
-    {% endif %} -->
-    
     <div id="adverts">
       
     </div>
