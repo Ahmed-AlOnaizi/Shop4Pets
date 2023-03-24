@@ -84,29 +84,6 @@
             </div>
         </section>
 		
-		<section id="petAdverts">
-    <h2>New Pet Adverts</h2>
-    <ul>
-        {% for advert in adverts %}
-        <li>
-        <div id = "AdvertDetail">
-            <h3>{{ advert.title}}</h3>
-            <a href="{% url 'pets:advert_detail' advert.id %}">View Details</a>
-            <img src="{{ advert.photo.url }}" alt="{{ advert.title }}" />
-            <p>{{ advert.description }}</p>
-            </div>
-        </li>
-        {% empty %}
-        <li>
-            <p>No pet adverts available at the moment.</p>
-        </li>
-
-
-        {% endfor %}
-    </ul>
-</section>
-
-
 
     <section id="perAdverts">
     <h2>Latest Animals</h2>

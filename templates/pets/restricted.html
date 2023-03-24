@@ -4,11 +4,31 @@
     Welcome to Shop4Pets!
 {% endblock %}
 {% block body_block %}
-    <h1>My Profile</h1>
-    <div>
-        <a href="{% url 'pets:home' %}">Homepage</a>
-    </div>
-    <div>
-        <a href="{% url 'pets:add_advert' %}" class="button">Create New Advert</a>
-    </div>
+    
+    <main id="UserPage">
+        <div style="grid-column: 2; grid-row: 1;"id="UserBox"><a href="{% url 'pets:home' %}">Homepage</a></div>
+        <div style="grid-column: 3; grid-row: 1;"id="UserBox"><h1>Welcome {{user.username}}!</h1></div>
+        <a href="{% url 'pets:add_advert' %}" style="grid-column: 2; grid-row: 2/span 2;" class="button">Create New Advert</a>
+
+        <div id="UserAd">
+            <h1>Your Ads:</h1>
+            {% for advert in adverts %}
+                <!--{% if advert.user == UserProfile.user %}-->
+                <li id="AdvertDetail">
+                    <a href="{% url 'pets:advert_detail' advert.id %}">{{ advert.pet_name }}<br></a>
+                    <img src="{{ advert.image.url }}" alt="{{ advert.pet_name }}">
+                    <p>{{ advert.description }}</p>
+                </li>
+                <!--{% else %}
+                    <li>
+                        <p>You have not made any adverts yet, start by making one now!</p>
+                    </li>
+                {% endif %}-->
+            {% empty %}
+              <li>
+                <p>No pet adverts found.</p>
+              </li>
+            {% endfor %}
+        </div>
+    </main>
 {% endblock %}

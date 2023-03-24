@@ -201,7 +201,7 @@ a:hover{
   height: 1000px;
   display:grid;
   text-align: center;
-  grid-template-rows: 10% 45% 45%;
+  grid-template-rows: 7% 46.5% 46.5%;
   font-size: 24px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -412,7 +412,7 @@ a:hover{
   }
 
   #searchResults {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     list-style-type: none;
     border-radius: 10px;
     margin: 10px auto 10px auto;
@@ -421,24 +421,85 @@ a:hover{
   #searchResults li{
     list-style-type: none;
   }
+
   #searchResults h2 {
     color: var(--light-color);
     margin: 10px;
   }
+
   #AdvertDetail{
     background-color: var(--light-color);
     color: var(--primary-color);
+    font-weight: bold;
     margin:25px; 
     padding: 10px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
-
   #AdvertDetail a {
     font-size: 24px;
-    color: var(--primary-color);
+    margin: 0 0 10px;
+  }
+  #AdvertDetail img {
+    aspect-ratio:initial;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 5px;
+    margin: 0px auto 10px auto;
   }
 
   #AdvertDetail p {
-    color:black;
+    display: inline;
+    vertical-align: top;
+    padding: 10px;
+  }
+
+  #UserPage {
+    max-height: 1800px;
+    display: grid;
+    grid-template-columns: 35% 15% 15% 15 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-gap: 0px;
+    color:var(--light-color);
+
+    margin: 20px auto 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  #UserBox {
+    color:var(--light-color);
+    width: 300px;
+    height: 200px;
+    margin: 10px 10px 20px 10px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  #UserPage a {
+    color:var(--light-color);
+    font-size: 26px;
+  }
+  #UserAd{
+    grid-column: 3/span 2;
+    grid-row: 2/span 4;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    list-style-type: none;
+    font-weight: bold;
+
+    margin:25px; 
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  #UserAd a {
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+  #UserAd img {
+    aspect-ratio:initial;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 5px;
+    margin: 0px auto 10px auto;
   }
