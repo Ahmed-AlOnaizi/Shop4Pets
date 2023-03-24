@@ -179,5 +179,4 @@ def user_login(request):
     
 @login_required
 def restricted(request):
-    homepage_url = reverse('pets:home')
-    return HttpResponse(f'Restricted page - go back to <a href="{homepage_url}">Homepage</a>')
+    return render(request, 'pets/restricted.html')

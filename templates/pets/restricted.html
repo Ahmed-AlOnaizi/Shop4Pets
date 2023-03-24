@@ -3,10 +3,12 @@
 {% block title_block %}
     Welcome to Shop4Pets!
 {% endblock %}
-    {% block body_block %}
-    
-     <h1>My Profile</h1>
-     <div>
-         <a href="{% url 'pets:home' %}">Homepage</a>
-     </div>
+{% block body_block %}
+    <h1>My Profile</h1>
+    <div>
+        <a href="{% url 'pets:home' %}">Homepage</a>
+    </div>
+    <div>
+        <a href="{% url 'pets:add_advert' %}" class="button">Create New Advert</a>
+    </div>
 {% endblock %}
