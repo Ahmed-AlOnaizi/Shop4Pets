@@ -38,6 +38,7 @@ def search(request):
     query = request.GET.get('query')
     if query:
         adverts = PetAd.objects.filter(pet_name__icontains=query)
+        adverts = PetAd.objects.filter(description__icontains=query)
     else:
         adverts= PetAd.objects.all()
     context = {'adverts': adverts}
