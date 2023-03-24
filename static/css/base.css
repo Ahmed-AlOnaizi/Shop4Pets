@@ -411,13 +411,38 @@ a:hover{
   }
 
   #petAdverts {
-    color: var(--secondary-color)
+
+    font-size: 18px;
+    color: var(--primary-color);
+    line-height: 1.5;
+    margin-bottom: 30px;
   }
-  #AdvertDetail a {
-    color: white;
+  #petAdverts img{
+    aspect-ratio:initial;
+    max-width: 95%;
+    max-height: 300px;
+
+
+    display: block;
+    margin: 10px 0px 0px 10px;
+    margin-left: auto;
+    margin-right: auto;
 
   }
 
-  #AdvertDetail p {
-    color: var(--secondary-color);
+  #petAdverts a {
+    vertical-align: text-top;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+  #petAdverts p {
+    font-size: 16px;
+    margin: 0;
+    color: var(--primary-color);
+  }
+
+  #AdvertDetail  {
+    color: var(--primary-color);
+
   }
