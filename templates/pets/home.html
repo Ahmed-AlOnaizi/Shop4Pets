@@ -5,7 +5,7 @@
 {% endblock %}
     {% block body_block %}
         <form action="{% url 'pets:search' %}" method="get" id="searchBar">
-            <input type="text" placeholder="Search pets...">
+            <input type="text" placeholder="Search pets..." name="query">
             <button type="submit"  id="searchBarButton"><img src="{% static 'images/search.png' %}"></button>
         </form>
         
