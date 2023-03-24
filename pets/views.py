@@ -39,7 +39,12 @@ def reviews(request):
     return render(request, 'pets/reviews.html', context)
 
 def search(request):
-    context = {}
+    query = request.GET.get('query')
+    if query:
+        adverts = PetAd.objects.filter(pet_name__icontains=query)
+    else:
+        adverts= PetAd.objects.all()
+    context = {'adverts': adverts}
     return render(request, 'pets/search.html', context)
 
 def register(request):
