@@ -57,7 +57,7 @@ def register(request):
     return render(request, 'pets/register.html',
                   {'user_form': user_form, 'registered': registered})
 
-
+@login_required
 def delete_advert(request, ad_id):
     advert = get_object_or_404(PetAd, pk=ad_id)
     if request.user == advert.user:
@@ -173,5 +173,5 @@ def user_login(request):
     
 @login_required
 def restricted(request):
-    return HttpResponse("You are officially registered in Shop4Pets")
-    return render(request, 'pets/restricted.html')
+    homepage_url = reverse('pets:home')
+    return HttpResponse(f'Restricted page - go back to <a href="{homepage_url}">Homepage</a>')
