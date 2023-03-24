@@ -4,9 +4,9 @@
     Welcome to Shop4Pets!
 {% endblock %}
     {% block body_block %}
-        <form action="#" method="get" id="searchBar">
+        <form action="{% url 'pets:search' %}" method="get" id="searchBar">
             <input type="text" placeholder="Search pets...">
-            <button href = "{% url 'pets:search' %}"  id="searchBarButton"><img src="{% static 'images/search.png' %}"></button><!-- type="submit" -->
+            <button type="submit"  id="searchBarButton"><img src="{% static 'images/search.png' %}"></button>
         </form>
         
         <div id = "CategoriesOfAnimals">
@@ -83,27 +83,29 @@
                 <p>This friendly goldfish needs a new tank to call home! They're easy to care for. </p>
             </div>
         </section>
+
+
+
     <section id="petAdverts">
-    <h2>New Pet Adverts</h2>
-    <ul>
-        {% for advert in adverts %}
-        <li>
-        <div id = "AdvertDetail">
-            <h3>{{ advert.title}}</h3>
-            <a href="{% url 'pets:advert_detail' advert.id %}">View Details</a>
-            <img src="{{ advert.photo.url }}" alt="{{ advert.title }}" />
-            <p>{{ advert.description }}</p>
-            </div>
-        </li>
-        {% empty %}
-        <li>
-            <p>No pet adverts available at the moment.</p>
-        </li>
+        <h2>New Pet Adverts</h2>
+        <ul>
+            {% for advert in adverts %}
+            <li>
+            <div id = "AdvertDetail">
+                <h3>{{ advert.title}}</h3>
+                <a href="{% url 'pets:advert_detail' advert.id %}">View Details</a>
+                <img src="{{ advert.photo.url }}" alt="{{ advert.title }}" />
+                <p>{{ advert.description }}</p>
+                </div>
+            </li>
+            {% empty %}
+            <li>
+                <p>No pet adverts available at the moment.</p>
+            </li>
 
-
-        {% endfor %}
-    </ul>
-</section>
+            {% endfor %}
+        </ul>
+    </section>
 		<!--<section id="latestAdverts">
     <h2>Latest Animals</h2>
      {% if latest_adverts %}

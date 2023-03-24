@@ -3,77 +3,31 @@
 {% block title_block %}
     Welcome to Shop4Pets!
 {% endblock %}
+    {% block body_block %}
 
-{% block body_block %}
-<header>
-  <link rel="stylesheet" href="../../static/css/base.css">
-  <nav>
-      <div class="logo-search" id="logoSearch">
-          <a href="#"><img src="{% static 'images/logo.png' %}" alt="Shop4Pets logo" id = "logo"> </a>
-          <h1 id = "Title">Welcome to Shop4Pets </h1>
-
-          <div id="login">
-              <button id="loginButton"><img src="{% static 'images/login.png' %}" id="loginIcon"><br>Login/SignUp</button>
-              <div id="loginDropdown">
-                  <a href="#">Login</a>
-                  <a href="#">Sign Up</a>
-              </div>
-          </div>
-              
-      </div>
-
-      <!-- <section id="pet-adverts">
-          <h2> New Pet Adverts</h2>
-          <ul>
-              {% for advert in adverts %}
-              <li>
-                  <h3>{{ advert.title}}</h3>h3>
-                  <a href="{% url 'pets:advert_detail' advert.id %}"> View Details </a>
-                  <img src = "{{ advert.photo.url }}" alt = "{{ advert.title }}" />
-                  <p>{{ advert.description }}</p>
-              </li>
-              {% endfor %}
-
-
-                  </h3>
-              </li>
-
-          </ul>
-
-      </section> -->
-
-      
-
-  </nav>
-
-  <body>
-    <form action="#" method="get" id="searchBar">
-      <input type="text" placeholder="Search pets...">
+    <form action="{% url 'pets:search' %}" method="get" id="searchBar">
+      <input type="text" placeholder="Search pets..." name="query">
       <button href = "{% url 'pets:search' %}"  id="searchBarButton"><img src="{% static 'images/search.png' %}"></button><!-- type="submit" -->
     </form>
-    
-    <div id="adverts">
-      
+    <div id="searchResults">
+        <h2>Search Results</h2>
+        <ul>
+          {% for advert in adverts %}
+            <li>
+              <div id="AdvertDetail">
+                <a href="{% url 'pets:advert_detail' advert.id %}">{{ advert.pet_name }}</a>
+                <img src="{{ advert.photo.url }}" alt="{{ advert.title }}" />
+                <p>{{ advert.description }}</p>
+              </div>
+            </li>
+          {% empty %}
+            <li>
+              <p>No pet adverts match your search.</p>
+            </li>
+          {% endfor %}
+        </ul>
     </div>
-  </body>
-
-{% endblock %}
-
-
-{% block footer %}
-
-{% endblock %}
-
-
-<!-- {% extends 'pets/base.html' %}
-
-{% block title_block %}
-    Search Results
-{% endblock %}
-
-{% block body_block %}
-    <h1>Search Results</h1>
-    
+    <!--<h1>Search Results</h1>
     {% if results %}
         <ul>
             {% for result in results %}
@@ -87,6 +41,10 @@
         </ul>
     {% else %}
         <p>No results found.</p>
-    {% endif %}
-{% end %}
--->
+    {% endif %} -->
+    
+    <div id="adverts">
+      
+    </div>
+
+{% endblock %}

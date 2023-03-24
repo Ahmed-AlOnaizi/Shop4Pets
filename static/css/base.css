@@ -369,12 +369,12 @@ a:hover{
     color: var(--light-color);
     grid-column: 1/span 3;
   }
-  #Reviews Customers {
+  #Customers {
     font-size: 24px;
     font-weight: bold;
     margin-left: 30px;
     margin-bottom: 10px;
-    font-color: black;
+    color:var(--light-color);
     grid-column: 1/span 3;
   }
 
@@ -411,14 +411,30 @@ a:hover{
 
   }
 
-  #petAdverts {
-    color: var(--secondary-color)
+  #searchResults {
+    background-color: var(--primary-color);
+    
+    
   }
-  #AdvertDetail a {
-    color: white;
+  #searchResults h2 {
+    color: var(--light-color);
+    margin: 10px;
+  }
+  #AdvertDetail{
+    list-style-type: none;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    margin:25px; 
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
 
+  #AdvertDetail a {
+    font-size: 24px;
+    color: var(--primary-color);
   }
 
   #AdvertDetail p {
-    color: var(--secondary-color);
+    color:black;
   }
