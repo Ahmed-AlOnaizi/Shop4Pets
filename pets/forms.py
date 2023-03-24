@@ -20,6 +20,7 @@ class CategoryForm(forms.ModelForm):
         model = Category
         fields = ('name',)
 
+#PageForm is just for testing PetAdForm is the actual one we used
 class PageForm(forms.ModelForm):
     title = forms.CharField(max_length=128, help_text="Please enter the title of the advert.")
     pet_name = forms.CharField(max_length=100, help_text="Please enter the name of the pet.")
